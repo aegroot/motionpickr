@@ -12,7 +12,7 @@ import java.io.Reader;
 @Component
 public class CSVParser implements CommandLineRunner {
     public static void parse() {
-        String csvFilePath = "C:\\Users\\arjan\\IdeaProjects\\motionpickr\\datasets\\data.csv"; // Replace with your CSV file path
+        String csvFilePath = "C:\\Users\\alex-\\IdeaProjects\\motionpickr\\datasets\\data.csv"; // Replace with your CSV file path
 
         try (Reader reader = new FileReader(csvFilePath);
              org.apache.commons.csv.CSVParser csvParser = new org.apache.commons.csv.CSVParser(reader, CSVFormat.EXCEL.withFirstRecordAsHeader())) {
@@ -46,13 +46,11 @@ public class CSVParser implements CommandLineRunner {
                 System.out.println("overview: " + overview);
                 System.out.println();
 
-
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
     }
     @Override
