@@ -20,8 +20,12 @@ public class Review {
 
     //many to one
     @ManyToOne
+            @JoinColumn(name = "movie_id")
     Movie movie;
     //many to one
+
+    @ManyToOne
+    @JoinColumn(name = "reviewer_id")
     User reviewer;
     String comment;
 

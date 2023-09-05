@@ -22,16 +22,13 @@ public class User extends Account{
 
     //many to many with self
     @ManyToMany
-    @Column(name = "friends")
     List<User> friends;
 
     //many to many
-    @Column(name = "watchlist")
     @ManyToMany
     List<Movie>watchList;
 
     //many to many
-    @Column(name = "liked_moves")
     @ManyToMany
     List<Movie>likedMovies;
 

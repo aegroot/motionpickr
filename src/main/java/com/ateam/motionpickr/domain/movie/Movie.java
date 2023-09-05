@@ -23,7 +23,9 @@ public class Movie {
 
     private String director,title;
     private Date releaseDate;
+    @ManyToMany
     private List<Actor> actorList;
+    @ManyToMany
     private List<Genre>genreList;
 
     public Long getId() {
