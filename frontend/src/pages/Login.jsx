@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import "../styles/registerSheet.css";
+// import "../styles/MainStyles.scss";
+// import "../styles/registerSheet.css";
+// import "../styles/login.scss";
 import axios from "axios";
 import Register from "./Register";
 
@@ -32,38 +34,42 @@ export default function Login() {
 
   if (!auth) {
     return (
-      <div className="register-container">
-        <h1 className="register-header"> Sign in </h1>
-        <div className="label-container">
-          <form className="register-labels" onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="email" id="email-label">
-                Enter e-mail:
-              </label>
-              <input
-                type="text"
-                id="email"
-                required
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-              />
-            </div>
-            <div>
-              <label htmlFor="password" id="password-label">
-                Enter password:
-              </label>
-              <input
-                type="password"
-                id="password"
-                required
-                value={password}
-                onChange={(ev) => {
-                  setPassword(ev.target.value);
-                }}
-              />
-              <button type="submit">login</button>
+      <div className="login-container">
+        <div>
+          <form onSubmit={handleSubmit}>
+            <h2> Sign in </h2>
+            <div className="label-container">
+              <div>
+                <label htmlFor="email" id="email-label">
+                  Enter e-mail:
+                </label>
+                <input
+                  type="text"
+                  id="email"
+                  required
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
+              </div>
+              <div>
+                <label htmlFor="password" id="password-label">
+                  Enter password:
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  required
+                  value={password}
+                  onChange={(ev) => {
+                    setPassword(ev.target.value);
+                  }}
+                />
+              </div>
+              <button className="btn btn--stretched" type="submit">
+                login
+              </button>
             </div>
           </form>
         </div>

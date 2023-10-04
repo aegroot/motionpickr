@@ -8,7 +8,6 @@ export default function Pagination({ page, totalPages, setPage }) {
     pageArray.push(i);
   }
 
-
   const showRange = pageArray.filter((number) => {
     if (page === 0) {
       return number <= page + 3 || number === totalPages - 1;
@@ -52,29 +51,34 @@ export default function Pagination({ page, totalPages, setPage }) {
   };
 
   return (
-    <div className="container">
-      <ul className="pagination">
-        <button className="pagination-button button1" onClick={handlePrevious}>
-          {"<"}
-        </button>
-        {showRange.map((pageNumber) => (
-          <li
-            className="pagination-item"
-            onClick={handleItem}
-            value={pageNumber}
-            key={pageNumber}
+    <div className="label-container">
+      <div className="container--pagination">
+        <ul className="pagination">
+          <button
+            className="pagination-button button1"
+            onClick={handlePrevious}
           >
-            {page === pageNumber ? (
-              <span id="current-page">{page + 1}</span>
-            ) : (
-              pageNumber + 1
-            )}
-          </li>
-        ))}
-        <button className="pagination-button button2" onClick={handleNext}>
-          {">"}
-        </button>
-      </ul>
+            {"<"}
+          </button>
+          {showRange.map((pageNumber) => (
+            <li
+              className="pagination-item"
+              onClick={handleItem}
+              value={pageNumber}
+              key={pageNumber}
+            >
+              {page === pageNumber ? (
+                <span id="current-page">{page + 1}</span>
+              ) : (
+                pageNumber + 1
+              )}
+            </li>
+          ))}
+          <button className="pagination-button button2" onClick={handleNext}>
+            {">"}
+          </button>
+        </ul>
+      </div>
     </div>
   );
 }

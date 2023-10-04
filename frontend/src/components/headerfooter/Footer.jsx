@@ -5,7 +5,9 @@ export default function Footer() {
   return (
     <>
       <footer>
-        <Nav />
+        <nav className="nav">
+          <Nav />
+        </nav>
       </footer>
     </>
   );

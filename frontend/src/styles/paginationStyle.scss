@@ -1,54 +1,81 @@
 @import "mainSheet";
 
-.container {
-  display: flex;
-  flex-direction: row;
+:root {
+  --color-accent: #ff3400;
 }
 
+/* Container styles */
+.container--pagination {
+  // position: relative;
+  // left: 27vw;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  margin-top: 20px;
+
+  // flex-grow: 1;
+}
+
+/* Pagination list styles */
 .pagination {
+  list-style: none;
   display: flex;
-  list-style-type: none;
-  outline-style: outset;
-  margin: 2vh;
+  align-items: center;
 }
 
-@mixin buttondisplay() {
-  height: 2px;
-  width: 2px;
+/* Pagination button styles */
+.pagination-button {
+  background-color: var(--color-accent);
+  color: #fff;
   border: none;
-  background-color: black;
+  padding: 10px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: auto;
 }
 
+.pagination-button:hover {
+  background-color: #0056b3;
+}
+
+/* Current page indicator styles */
+#current-page {
+  background-color: var(--color-accent);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Pagination item styles */
 .pagination-item {
-  margin-right: 2vh;
-  margin-left: 1vh;
-  width: 25px;
-  height: 25px;
-  text-align: center;
-  border-radius: 50%;
-  color: darkblue;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+
   &:hover {
-    background-color: black;
-    color : whitesmoke;
+    background-color: #ddd;
   }
 }
 
-.pagination-button {
-    margin-right: 0.5vh;
-    margin-left: 0.5vh;
-    width: 25px;
-    height: 25px;
-    background: white;
-    font-size: 2vh;
-    border-radius: 50%;
-    text-align: center;
-    border: none;
-    &:hover {
-        background-color: black;
-        color: whitesmoke;
-    }
+/* Button 1 styles (Previous button) */
+.button1 {
+  background-color: #ccc;
+  color: #333;
+
+  &:hover {
+    background-color: #bbb;
+  }
 }
 
-#current-page{
-  text-decoration-line: underline;
+/* Button 2 styles (Next button) */
+.button2 {
+  background-color: #ccc;
+  color: #333;
+
+  &:hover {
+    background-color: #bbb;
+  }
 }

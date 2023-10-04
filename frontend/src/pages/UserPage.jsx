@@ -1,12 +1,13 @@
 import React from "react";
 import Login from "./Login";
 import { AuthHeader } from "../auth/authorization";
+import WatchList from "./watchList";
 
 export default function UserPage() {
   if (AuthHeader()) {
     return (
       <>
-        <p></p>
+        <WatchList />
       </>
     );
   } else {

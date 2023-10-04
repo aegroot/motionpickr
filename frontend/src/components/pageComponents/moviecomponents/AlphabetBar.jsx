@@ -1,15 +1,18 @@
+// import "../../../styles/letter.scss";
 
-import "../../../styles/letter.scss";
-
-export default function AlphabetBar({moviePerletter, setCurrentLetter, setPage, currentletter}) {
-
+export default function AlphabetBar({
+  moviePerletter,
+  setCurrentLetter,
+  setPage,
+  currentletter,
+}) {
   const handleClick = (e) => {
-    if(e.target.value !== currentletter) {
+    if (e.target.value !== currentletter) {
       setPage(0);
     }
-    setCurrentLetter(e.target.value)
-    moviePerletter(e.target.value)
-  }
+    setCurrentLetter(e.target.value);
+    moviePerletter(e.target.value);
+  };
 
   const renderAlphabet = () => {
     const letters = [];
@@ -24,13 +27,13 @@ export default function AlphabetBar({moviePerletter, setCurrentLetter, setPage, 
 
   const alphabet = renderAlphabet();
 
-
   return (
     <div>
       <div className="alphabet-bar">
         {alphabet.map((letter) => (
           <div key={letter.id} className="letter">
             <input
+              className="btn btn--small"
               type="button"
               value={letter.sign}
               onClick={handleClick}

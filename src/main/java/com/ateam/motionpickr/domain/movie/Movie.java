@@ -39,7 +39,7 @@ public class Movie {
     private String tagline;
     private String posterLink;
 
-    @Column()
+    //    @Column()
     private double popularity;
 
     @JsonIgnore

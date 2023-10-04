@@ -44,7 +44,6 @@ export default function Movie() {
     setTotalPages(res.data.totalPages);
   };
 
-
   useEffect(() => {
     switch (url) {
       case "letter":
@@ -59,34 +58,57 @@ export default function Movie() {
   }, [page, currentLetter]);
 
   return (
-    <div>
-      <AlphabetBar
-        moviePerletter={moviePerLetter}
-        setCurrentLetter={setCurrentLetter}
-        setPage={setPage}
-        currentletter={currentLetter}
-      />
-      <MovieSearch
-        search={search}
-        setSearch={setSearch}
-        movieSearch={movieSearch}
-        setPage={setPage}
-      />
-      <table>
-        <thead>
-          <tr>
-            <th>title</th>
-            <th>description</th>
-            <th>score</th>
-            <th>nav</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-      {movies.map((movie) => (
-        <MovieItem movie={movie} key={movie.id} render={"movielist"} genres={movie.genres} />
-      ))}
-      <Pagination totalPages={totalPages} page={page} setPage={setPage} />
-    </div>
+    <>
+      <div>
+        <section className="block">
+          <header className="block__header">
+            <h2>Movie Database</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut,
+              ipsam.
+            </p>
+          </header>
+          <div className="container">
+            <div className="searchmovie">
+              <MovieSearch
+                search={search}
+                setSearch={setSearch}
+                movieSearch={movieSearch}
+                setPage={setPage}
+              />
+
+              <AlphabetBar
+                moviePerletter={moviePerLetter}
+                setCurrentLetter={setCurrentLetter}
+                setPage={setPage}
+                currentletter={currentLetter}
+              />
+
+              <div className="container--movie">
+                <div className="grid-container">
+                  {/* <div className="grid-item">poster</div>
+                  <div className="grid-item">title</div>
+                  <div className="grid-item">description</div>
+                  <div className="grid-item">score</div> */}
+                  {movies.map((movie) => (
+                    <MovieItem
+                      movie={movie}
+                      key={movie.id}
+                      render={"movielist"}
+                      genres={movie.genres}
+                    />
+                  ))}
+                  <Pagination
+                    totalPages={totalPages}
+                    page={page}
+                    setPage={setPage}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
   );
 }
